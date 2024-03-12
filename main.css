@@ -1,0 +1,41 @@
+body {
+    background-color: Lavender;
+    color: black;
+    font-family: Helvetica;
+    margin: 50px;
+    padding: 0px
+
+}
+
+a {
+    text-decoration: none; color: MediumSlateBlue;
+    font-size: 20px; font-weight: bold
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+li {
+    color: black;
+    font-size: 20px; font-weight: bold
+}
+
+header {
+    background-color: Lavender;
+    color: DimGrey;
+    font-family: Helvetica;
+    font-size: 15px
+    margin: 0px;
+    padding: 0px;
+}
+
+footer {
+    background-color: Lavender;
+    color: DimGrey;
+    font-family: Helvetica;
+    font-style: italic;
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+}
