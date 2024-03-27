@@ -6,14 +6,28 @@ body {
     padding: 0px
 
 }
-
 a {
     text-decoration: none; color: MediumSlateBlue;
     font-size: 20px; font-weight: bold
 }
 
+a:link {
+    color: MediumSlateBlue
+}
+
+a:visited {
+    color: dimgrey
+}
+
 a:hover {
     text-decoration: underline;
+    font-size: 21px;
+    text-shadow: 0px 0px 1px MediumSlateBlue
+}
+
+a:active {
+    color: midnightblue;
+    opacity: 0.3;
 }
 
 ul {
