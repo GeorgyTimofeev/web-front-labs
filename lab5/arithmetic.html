@@ -16,6 +16,15 @@
             alert('Сумма ' + a + ' и ' + b + ' = ' + result);
        }
 
+        function showAuthor() {
+            let author = "Автор страницы: \nТимофеев Георгий Алексеевич";
+            alert(author);
+        }
+
+        function showSlogan() {
+            let slogan = "Приветствую вас на моей странице! \n\nDesign by Me in Novosibirsk"
+            alert(slogan);
+        }
     </script>
     <style>
         .message {
@@ -28,20 +37,21 @@
             color:  white;
             background-color: #7b68ee
         }
+
     </style>
 </head>
 <body>
-    <header>
+    <header onclick="showAuthor()" style="cursor: pointer;">
         НГТУ, ФБ, Лабораторная работа 5
         <hr>
     </header>
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="showSlogan()" style="cursor: pointer;">
         &copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024
     </footer>
 </body>
