@@ -1,112 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Тимофеев Георгий Алексеевич. Лабораторная 5</title>
-    <link rel="stylesheet" href="../main.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../favicon-16x16.png">
-    <link rel="icon" href="../favicon-32x32.png">
-    <script>
-       function showSum() {
-            let input1 = document.getElementById("number1");
-            let input2 = document.getElementById("number2");
+    <head>
+        <meta charset="UTF-8" />
+        <title>Тимофеев Георгий Алексеевич. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../favicon-16x16.png" />
+        <link rel="icon" href="../favicon-32x32.png" />
+        <script>
+            function showSum() {
+                let input1 = document.getElementById("number1");
+                let input2 = document.getElementById("number2");
 
-            let a = parseInt(input1.value);
-            let b = parseInt(input2.value);
-            let result = a + b;
-            alert('Сумма ' + a + ' и ' + b + ' = ' + result);
-       }
+                let a = parseInt(input1.value);
+                let b = parseInt(input2.value);
+                let result = a + b;
+                alert("Сумма " + a + " и " + b + " = " + result);
+            }
 
-       function showDiversity() {
-            let input1 = document.getElementById("number1");
-            let input2 = document.getElementById("number2");
+            function showDiversity() {
+                let input1 = document.getElementById("number1");
+                let input2 = document.getElementById("number2");
 
-            let a = parseInt(input1.value);
-            let b = parseInt(input2.value);
-            let result = a - b;
-            alert('Разность ' + a + ' и ' + b + ' = ' + result);
+                let a = parseInt(input1.value);
+                let b = parseInt(input2.value);
+                let result = a - b;
+                alert("Разность " + a + " и " + b + " = " + result);
+            }
 
-       }
+            function showMultiply() {
+                let input1 = document.getElementById("number1");
+                let input2 = document.getElementById("number2");
 
-       function showMultiply() {
-            let input1 = document.getElementById("number1");
-            let input2 = document.getElementById("number2");
+                let a = parseInt(input1.value);
+                let b = parseInt(input2.value);
+                let result = a * b;
+                alert("Произведение " + a + " и " + b + " = " + result);
+            }
 
-            let a = parseInt(input1.value);
-            let b = parseInt(input2.value);
-            let result = a * b;
-            alert('Произведение ' + a + ' и ' + b + ' = ' + result);
+            function showDivision() {
+                let input1 = document.getElementById("number1");
+                let input2 = document.getElementById("number2");
 
-       }
+                let a = parseInt(input1.value);
+                let b = parseInt(input2.value);
+                let result = a / b;
+                alert(a + " делить на " + b + " = " + result);
+            }
 
-       function showDivision() {
-            let input1 = document.getElementById("number1");
-            let input2 = document.getElementById("number2");
+            function showPower() {
+                let input1 = document.getElementById("number1");
+                let input2 = document.getElementById("number2");
 
-            let a = parseInt(input1.value);
-            let b = parseInt(input2.value);
-            let result = a / b;
-            alert( a + ' делить на ' + b + ' = ' + result);
+                let a = parseInt(input1.value);
+                let b = parseInt(input2.value);
+                let result = a ** b;
+                alert(a + " в степени " + b + " = " + result);
+            }
 
-       }
+            function showAuthor() {
+                let author = "Автор страницы: \nТимофеев Георгий Алексеевич";
+                alert(author);
+            }
 
-       function showPower() {
-            let input1 = document.getElementById("number1");
-            let input2 = document.getElementById("number2");
+            function showSlogan() {
+                let slogan =
+                    "Приветствую вас на моей странице! \n\nDesign by Me in Novosibirsk";
+                alert(slogan);
+            }
 
-            let a = parseInt(input1.value);
-            let b = parseInt(input2.value);
-            let result = a ** b;
-            alert( a + ' в степени ' + b + ' = ' + result);
+            function changeOutput(buttonNum, backColor, textColor, borderType) {
+                let output = document.getElementById("output");
+                output.innerHTML = buttonNum;
+                output.style.backgroundColor = backColor;
+                output.style.color = textColor;
+                output.style.borderBlockStyle = borderType;
+            }
+        </script>
+        <style>
+            .message {
+                cursor: pointer;
+                display: inline-block;
+                border: 2px solid #7b68ee;
+                border-radius: 18px;
+                margin: 5px;
+                padding: 10px;
+                color: white;
+                background-color: #7b68ee;
+            }
 
-       }
+            #output {
+                border: 1px solid;
+                width: 300px;
+                height: 40px;
+                padding: 5px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header onclick="showAuthor()" style="cursor: pointer">
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr />
+        </header>
 
-        function showAuthor() {
-            let author = "Автор страницы: \nТимофеев Георгий Алексеевич";
-            alert(author);
-        }
+        <main>
+            <label
+                >Число 1: <input type="number" value="1" id="number1" /></label
+            ><br />
+            <label
+                >Число 2: <input type="number" value="2" id="number2" /></label
+            ><br />
 
-        function showSlogan() {
-            let slogan = "Приветствую вас на моей странице! \n\nDesign by Me in Novosibirsk"
-            alert(slogan);
-        }
-    </script>
-    <style>
-        .message {
-            cursor: pointer;
-            display: inline-block;
-            border: 2px solid #7b68ee;
-            border-radius: 18px;
-            margin: 5px;
-            padding: 10px;
-            color:  white;
-            background-color: #7b68ee
-        }
+            <div>
+                <input
+                    type="button"
+                    value="Кнопка 1"
+                    onclick="changeOutput(1, 'MediumSlateBlue', 'white', 'dotted')"
+                />
+                <input
+                    type="button"
+                    value="Кнопка 2"
+                    onclick="changeOutput(2, 'lime', 'white', 'groove')"
+                />
+                <input
+                    type="button"
+                    value="Кнопка 3"
+                    onclick="changeOutput(3, 'purple', 'Lavender', 'inherit')"
+                />
+                <input
+                    type="button"
+                    value="Кнопка 4"
+                    onclick="changeOutput(3, 'lightblue', 'grey', 'revert-layer')"
+                />
+            </div>
 
-    </style>
-</head>
-<body>
-    <header onclick="showAuthor()" style="cursor: pointer;">
-        НГТУ, ФБ, Лабораторная работа 5
-        <hr>
-    </header>
+            <div id="output"></div>
 
-    <main>
-        <label>Число 1: <input type="number" value="1" id="number1"></label><br>
-        <label>Число 2: <input type="number" value="2" id="number2"></label><br>
+            <div class="message" onclick="showSum()">Найти сумму чисел</div>
+            <div class="message" onclick="showDiversity()">
+                Найти разность чисел
+            </div>
+            <div class="message" onclick="showMultiply()">
+                Найти произведение
+            </div>
+            <div class="message" onclick="showDivision()">Найти деление</div>
+            <div class="message" onclick="showPower()">Найти степень</div>
+            <div class="message" onclick="showAuthor()">
+                Узнать, кто автор страницы
+            </div>
+        </main>
 
-        <div class="message" onclick="showSum()">Найти сумму чисел</div>
-        <div class="message" onclick="showDiversity()">Найти разность чисел</div>
-        <div class="message" onclick="showMultiply()">Найти произведение</div>
-        <div class="message" onclick="showDivision()">Найти деление</div>
-        <div class="message" onclick="showPower()">Найти степень</div>
-        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
-    </main>
-
-    <footer ondblclick="showSlogan()" style="cursor: pointer;">
-        &copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024
-    </footer>
-</body>
+        <footer ondblclick="showSlogan()" style="cursor: pointer">
+            &copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
 </html>
