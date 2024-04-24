@@ -21,7 +21,7 @@
                 background-color: whitesmoke;
                 cursor: pointer;
                 overflow: auto;
-                width: 200px;
+                width: 190px;
                 height: 40px;
             }
         </style>
@@ -52,6 +52,13 @@
                 document.getElementById("gsOutput").innerText = value;
                 document.getElementById("blurImage").style.filter =
                     "grayscale(" + value + ")";
+            }
+
+            function hrChange() {
+                let value = document.getElementById("hrValue").value + "deg";
+                document.getElementById("hrOutput").innerText = value;
+                document.getElementById("blurImage").style.filter =
+                    "hue-rotate(" + value + ")";
             }
         </script>
     </head>
@@ -112,6 +119,19 @@
                     id="gsValue"
                 />
                 <span id="gsOutput"></span>
+            </div>
+
+            <div class="filter">
+                <b>Фильтр hue-rotate:</b>
+                <input
+                    type="range"
+                    min="0"
+                    max="360"
+                    value="0"
+                    onchange="hrChange()"
+                    id="hrValue"
+                />
+                <span id="hrOutput"></span>
             </div>
 
             <div>
