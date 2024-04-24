@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Тимофеев Георгий Алексеевич. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../favicon-16x16.png" />
+        <link rel="icon" href="../favicon-32x32.png" />
+
+        <style>
+            .circle {
+                border: 5px solid;
+                border-radius: 50%;
+                width: 70px;
+                height: 70px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                position: absolute;
+                transition:
+                    opacity 1s,
+                    width 1s,
+                    height 1s;
+            }
+        </style>
+
+        <script>
+            function disappear(idd) {
+                document.getElementById(idd).style.opacity = "0";
+                document.getElementById(idd).style.width = "0";
+                document.getElementById(idd).style.height = "0";
+            }
+
+            function reappear(idd) {
+                document.getElementById(idd).style.opacity = "1";
+                document.getElementById(idd).style.width = "70px";
+                document.getElementById(idd).style.height = "70px";
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr />
+        </header>
+
+        <main>
+            <div
+                class="circle"
+                style="
+                    left: 700px;
+                    top: 250px;
+                    cursor: pointer;
+                    background-color: aliceblue;
+                "
+                id="1"
+                onclick="disappear(1);setTimeout(() => reappear(1), 3000)"
+            >
+                1
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 150px;
+                    top: 200px;
+                    cursor: pointer;
+                    background-color: green;
+                "
+                id="2"
+                onclick="disappear(2);setTimeout(() => reappear(2), 3000)"
+            >
+                2
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 300px;
+                    top: 400px;
+                    cursor: pointer;
+                    background-color: yellow;
+                "
+                id="3"
+                onclick="disappear(3);setTimeout(() => reappear(3), 3000)"
+            >
+                3
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 1100px;
+                    top: 100px;
+                    cursor: pointer;
+                    background-color: red;
+                "
+                id="4"
+                onclick="disappear(4);setTimeout(() => reappear(4), 3000)"
+            >
+                4
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 620px;
+                    top: 100px;
+                    cursor: pointer;
+                    background-color: yellowgreen;
+                "
+                id="5"
+                onclick="disappear(5);setTimeout(() => reappear(5), 3000)"
+            >
+                5
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 570px;
+                    top: 500px;
+                    cursor: pointer;
+                    background-color: orangered;
+                "
+                id="6"
+                onclick="disappear(6);setTimeout(() => reappear(6), 3000)"
+            >
+                6
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 300px;
+                    top: 50px;
+                    cursor: pointer;
+                    background-color: orchid;
+                "
+                id="7"
+                onclick="disappear(7);setTimeout(() => reappear(7), 3000)"
+            >
+                7
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 800px;
+                    top: 330px;
+                    cursor: pointer;
+                    background-color: blanchedalmond;
+                "
+                id="8"
+                onclick="disappear(8);setTimeout(() => reappear(8), 3000)"
+            >
+                8
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 400px;
+                    top: 200px;
+                    cursor: pointer;
+                    background-color: hotpink;
+                "
+                id="9"
+                onclick="disappear(9);setTimeout(() => reappear(9), 3000)"
+            >
+                9
+            </div>
+            <div
+                class="circle"
+                style="
+                    left: 1000px;
+                    top: 400px;
+                    cursor: pointer;
+                    background-color: khaki;
+                "
+                id="10"
+                onclick="disappear(10);setTimeout(() => reappear(10), 3000)"
+            >
+                10
+            </div>
+        </main>
+
+        <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
+    </body>
+</html>
