@@ -67,6 +67,13 @@
                 document.getElementById("blurImage").style.filter =
                     "invert(" + value + ")";
             }
+
+            function stChange() {
+                let value = document.getElementById("stValue").value + "%";
+                document.getElementById("stOutput").innerText = value;
+                document.getElementById("blurImage").style.filter =
+                    "saturate(" + value + ")";
+            }
         </script>
     </head>
     <body>
@@ -152,6 +159,19 @@
                     id="inValue"
                 />
                 <span id="inOutput"></span>
+            </div>
+
+            <div class="filter">
+                <b>Фильтр saturate:</b>
+                <input
+                    type="range"
+                    min="0"
+                    max="500"
+                    value="100"
+                    onchange="stChange()"
+                    id="stValue"
+                />
+                <span id="stOutput"></span>
             </div>
 
             <div>
