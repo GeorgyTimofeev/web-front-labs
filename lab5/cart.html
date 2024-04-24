@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Тимофеев Георгий Алексеевич. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../favicon-16x16.png" />
+        <link rel="icon" href="../favicon-32x32.png" />
+        <style>
+            .cards {
+                width: 250px;
+                border: 4px solid midnightblue;
+                border-radius: 40px;
+                display: inline-block;
+                vertical-align: top;
+                transition: 0.5s 0.1s;
+                height: 320px;
+                text-align: center;
+                overflow: auto;
+                margin-bottom: 20px;
+                margin-right: 20px;
+            }
+            .cards img {
+                width: 100%;
+                height: auto;
+            }
+
+            h1 {
+                margin: 0;
+                padding: 10px;
+                background-color: transparent;
+                color: #333;
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+            .text {
+                font-size: 10px;
+                text-align: left;
+                padding: 15px;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 10px;
+                background-color: transparent;
+                color: #333;
+                font-size: 1.1em;
+                text-align: center;
+            }
+
+            input {
+                color: #7b68ee;
+                font-size: 0.9em;
+                text-align: center;
+                padding: 5px;
+                margin: 5px;
+                border-radius: 40px;
+                border: none;
+                background-color: whitesmoke;
+                cursor: pointer;
+            }
+
+            label {
+                color: #7b68ee;
+                font-size: 0.9em;
+                text-align: center;
+                padding: 5px;
+                margin: 5px;
+                border-radius: 40px;
+                border: none;
+                background-color: whitesmoke;
+                cursor: pointer;
+                overflow: auto;
+            }
+        </style>
+        <script>
+            function resetAll() {
+                document.getElementById("card1").value = "";
+                document.getElementById("card2").value = "";
+                document.getElementById("card3").value = "";
+                document.getElementById("card4").value = "";
+                document.getElementById("card5").value = "";
+                document.getElementById("card6").value = "";
+                document.getElementById("summ").innerHTML = "";
+            }
+
+            function sumAll() {
+                let input1 = document.getElementById("card1");
+                let input2 = document.getElementById("card2");
+                let input3 = document.getElementById("card3");
+                let input4 = document.getElementById("card4");
+                let input5 = document.getElementById("card5");
+                let input6 = document.getElementById("card6");
+
+                let a = parseInt(input1.value);
+                let b = parseInt(input2.value);
+                let c = parseInt(input3.value);
+                let d = parseInt(input4.value);
+                let e = parseInt(input5.value);
+                let f = parseInt(input6.value);
+
+                if (isNaN(a)) a = 0;
+                if (isNaN(b)) b = 0;
+                if (isNaN(c)) c = 0;
+                if (isNaN(d)) d = 0;
+                if (isNaN(e)) e = 0;
+                if (isNaN(f)) f = 0;
+
+                let result =
+                    a * 2500 +
+                    b * 2500 +
+                    c * 1700 +
+                    d * 990 +
+                    e * 2900 +
+                    f * 2500;
+
+                if (result <= 0)
+                    document.getElementById("sum").innerHTML =
+                        "Ваша корзина пуста!";
+                else
+                    document.getElementById("sum").innerHTML =
+                        "Суммарная стоимость = " + result + " рублей";
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr />
+        </header>
+
+        <main>
+            <div class="cards">
+                <img src="../card1.png" alt="card1" />
+                <h1>Футболка: "Олег"</h1>
+                <p></p>
+                <div class="text">
+                    Классическая футболка прямого кроя с коротким рукавом для
+                    мужчин из мягкого хлопка плотностью 140-160 г/м2. Базовая
+                    универсальная модель на каждый день, для прогулок, спорта,
+                    дома. Двойная прострочка швов делает изделие более
+                    износостойким.
+                </div>
+                <h2>Цена: 2500 руб.</h2>
+                <input
+                    type="number"
+                    min="0"
+                    placeholder="Введите нужное кол-во"
+                    min="0"
+                    maxlength="2"
+                    id="card1"
+                />
+            </div>
+
+            <div class="cards">
+                <img src="../card2.png" alt="card2" />
+                <h1>Футболка: "Диванные войска"</h1>
+                <div class="text">
+                    Классическая футболка прямого кроя с коротким рукавом для
+                    мужчин из мягкого хлопка плотностью 140-160 г/м2. Базовая
+                    универсальная модель на каждый день, для прогулок, спорта,
+                    дома. Двойная прострочка швов делает изделие более
+                    износостойким.
+                </div>
+                <h2>Цена: 2500 руб.</h2>
+                <input
+                    type="number"
+                    min="0"
+                    placeholder="Введите нужное кол-во"
+                    min="0"
+                    maxlength="2"
+                    id="card2"
+                />
+            </div>
+
+            <div class="cards">
+                <img src="../card7.png" alt="card7" />
+                <h1>Светящаяся футболка: "Бендер и Луна"</h1>
+                <div class="text">
+                    Модель выполнена из мягкого приятного трикотажа из 100%
+                    хлопка, поэтому отлично подходит для повседневной носки.
+                    Футболка представлена в полном размерном ряду. Модель с
+                    коротким рукавом, горловина обработана эластичной рибаной.
+                    Принт наносится современным инновационным способом переноса
+                    на полотно для создания ярких и долговечных изображений.
+                    Светящиеся в темноте футболки быстро и легко зарядить. Для
+                    этого вам потребуется наиболее яркий источник света, но
+                    подойдет даже фонарик, если ничего другого нет под рукой. То
+                    есть чем ярче будет источник света, которым заряжается
+                    футболка, тем дольше и ярче она будет светиться.
+                </div>
+                <h2>Цена: 2500 руб.</h2>
+                <input
+                    type="number"
+                    min="0"
+                    placeholder="Введите нужное кол-во"
+                    min="0"
+                    maxlength="2"
+                    id="card6"
+                />
+            </div>
+
+            <div class="cards">
+                <img src="../card6.png" alt="card3" />
+                <h1>Термокружка: "ЪУЪ glitch"</h1>
+                <div class="text">
+                    Термокружка-непроливайка с герметичной крышкой и двойными
+                    пластиковыми стенками. Сохраняет тепло напитка в течение
+                    часа и не позволяет жидкости проливаться во время поездок и
+                    прогулок. Рисунок можно менять под свое настроение, стоит
+                    только раскрутить крышку и заменить картинку на другую.
+                    Можно сделать со своим дизайном.
+                </div>
+                <h2>Цена: 1700 руб.</h2>
+                <input
+                    type="number"
+                    min="0"
+                    placeholder="Введите нужное кол-во"
+                    min="0"
+                    maxlength="2"
+                    id="card3"
+                />
+            </div>
+
+            <div class="cards">
+                <img src="../card4.png" alt="card4" />
+                <h1>Бутылка: "Ой, всё"</h1>
+                <p></p>
+                <div class="text">
+                    Вместительная спортивная бутылка с удобным горлышком и двумя
+                    комплектами крышек. Можно заказать со своим дизайном.
+                </div>
+                <h2>Цена: 990 руб.</h2>
+                <input
+                    type="number"
+                    min="0"
+                    placeholder="Введите нужное кол-во"
+                    min="0"
+                    maxlength="2"
+                    id="card4"
+                />
+            </div>
+
+            <div class="cards">
+                <img src="../card5.png" alt="card5" />
+                <h1>Набор посуды: "Shy Duck"</h1>
+                <div class="text">
+                    Кружка изготовлена из высококачественной белой керамики.
+                    Тарелка изготовлена из фарфора. Принт наносится на бока
+                    кружки: два изображения или только с одной стороны. На
+                    тарелку принт наносится на плоскую часть.
+                </div>
+                <h2>Цена: 2900 руб.</h2>
+                <input
+                    type="number"
+                    min="0"
+                    placeholder="Введите нужное кол-во"
+                    min="0"
+                    maxlength="2"
+                    id="card5"
+                />
+            </div>
+
+            <div
+                class="cards"
+                style="width: 530px; height: 320px; background-color: #7b68ee"
+            >
+                <h1>Меню</h1>
+                <label
+                    id="sum"
+                    style="
+                        font-size: 25px;
+                        display: block;
+                        margin: 10px;
+                        padding: 10px;
+                        height: 40px;
+                        line-height: 40px;
+                    "
+                ></label>
+
+                <input
+                    type="button"
+                    value="Рассчитать сумму"
+                    onclick="sumAll()"
+                    style="
+                        font-size: 25px;
+                        display: block;
+                        margin: 10px;
+                        padding: 10px;
+                    "
+                />
+
+                <input
+                    type="reset"
+                    value="Сбросить"
+                    onclick="resetAll()"
+                    style="
+                        font-size: 25px;
+                        display: block;
+                        margin: 10px;
+                        padding: 10px;
+                    "
+                />
+            </div>
+        </main>
+
+        <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
+    </body>
+</html>
