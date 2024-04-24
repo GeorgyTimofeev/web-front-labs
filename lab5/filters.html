@@ -74,6 +74,13 @@
                 document.getElementById("blurImage").style.filter =
                     "saturate(" + value + ")";
             }
+
+            function seChange() {
+                let value = document.getElementById("seValue").value + "%";
+                document.getElementById("seOutput").innerText = value;
+                document.getElementById("blurImage").style.filter =
+                    "sepia(" + value + ")";
+            }
         </script>
     </head>
     <body>
@@ -172,6 +179,19 @@
                     id="stValue"
                 />
                 <span id="stOutput"></span>
+            </div>
+
+            <div class="filter">
+                <b>Фильтр sepia:</b>
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    onchange="seChange()"
+                    id="seValue"
+                />
+                <span id="seOutput"></span>
             </div>
 
             <div>
