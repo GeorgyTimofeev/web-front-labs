@@ -22,8 +22,7 @@
                 cursor: pointer;
                 overflow: auto;
                 width: 200px;
-                height: 15px
-                line-height:;
+                height: 40px;
             }
         </style>
         <script>
@@ -40,6 +39,13 @@
                 document.getElementById("blurImage").style.filter =
                     "brightness(" + value + ")";
             }
+
+            function cnChange() {
+                let value = document.getElementById("cnValue").value + "%";
+                document.getElementById("cnOutput").innerText = value;
+                document.getElementById("blurImage").style.filter =
+                    "contrast(" + value + ")";
+            }
         </script>
     </head>
     <body>
@@ -50,7 +56,7 @@
 
         <main>
             <div class="filter">
-                Фильтр blur:
+                <b>Фильтр blur:</b>
                 <input
                     type="range"
                     min="0"
@@ -63,7 +69,7 @@
             </div>
 
             <div class="filter">
-                Фильтр brightness:
+                <b>Фильтр brightness:</b>
                 <input
                     type="range"
                     min="0"
@@ -73,6 +79,19 @@
                     id="brValue"
                 />
                 <span id="brOutput"></span>
+            </div>
+
+            <div class="filter">
+                <b>Фильтр contrast:</b>
+                <input
+                    type="range"
+                    min="0"
+                    max="500"
+                    value="100"
+                    onchange="cnChange()"
+                    id="cnValue"
+                />
+                <span id="cnOutput"></span>
             </div>
 
             <div>
