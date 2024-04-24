@@ -46,6 +46,13 @@
                 document.getElementById("blurImage").style.filter =
                     "contrast(" + value + ")";
             }
+
+            function gsChange() {
+                let value = document.getElementById("gsValue").value + "%";
+                document.getElementById("gsOutput").innerText = value;
+                document.getElementById("blurImage").style.filter =
+                    "grayscale(" + value + ")";
+            }
         </script>
     </head>
     <body>
@@ -92,6 +99,19 @@
                     id="cnValue"
                 />
                 <span id="cnOutput"></span>
+            </div>
+
+            <div class="filter">
+                <b>Фильтр grayscale:</b>
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    onchange="gsChange()"
+                    id="gsValue"
+                />
+                <span id="gsOutput"></span>
             </div>
 
             <div>
