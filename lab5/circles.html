@@ -28,15 +28,17 @@
 
         <script>
             function disappear(idd) {
-                document.getElementById(idd).style.opacity = "0";
+                document.getElementById(idd).style.opacity = "1";
                 document.getElementById(idd).style.width = "0";
                 document.getElementById(idd).style.height = "0";
+                document.getElementById(idd).style.fontSize = "0";
             }
 
             function reappear(idd) {
                 document.getElementById(idd).style.opacity = "1";
                 document.getElementById(idd).style.width = "70px";
                 document.getElementById(idd).style.height = "70px";
+                document.getElementById(idd).style.fontSize = "15px";
             }
         </script>
     </head>
