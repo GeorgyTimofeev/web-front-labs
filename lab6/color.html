@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Тимофеев Георгий Алексеевич. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../favicon-16x16.png" />
+        <link rel="icon" href="../favicon-32x32.png" />
+        <style>
+            .color_block {
+                margin: 30px auto;
+                border: 1px solid;
+                padding: 20px;
+                text-align: center;
+                width: 290px;
+                border-color: black;
+                background-color: yellow;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: background-color 0.5s ease;
+            }
+        </style>
+
+        <script>
+            function changeColor(div) {
+                if (div.style.backgroundColor === "yellow") {
+                    div.style.backgroundColor = "red";
+                    div.style.color = "white";
+                    document.getElementById("color-name").innerHTML = "красный";
+                } else if (div.style.backgroundColor === "red") {
+                    div.style.backgroundColor = "black";
+                    div.style.color = "yellow";
+                    document.getElementById("color-name").innerHTML = "черный";
+                } else if (div.style.backgroundColor === "black") {
+                    div.style.backgroundColor = "lightblue";
+                    div.style.color = "black";
+                    document.getElementById("color-name").innerHTML = "голубой";
+                } else if (div.style.backgroundColor === "lightblue") {
+                    div.style.backgroundColor = "pink";
+                    div.style.color = "black";
+                    document.getElementById("color-name").innerHTML = "розовый";
+                } else if (div.style.backgroundColor === "pink") {
+                    div.style.backgroundColor = "green";
+                    div.style.color = "white";
+                    document.getElementById("color-name").innerHTML = "зеленый";
+                } else if (div.style.backgroundColor === "green") {
+                    div.style.backgroundColor = "blue";
+                    div.style.color = "white";
+                    document.getElementById("color-name").innerHTML = "синий";
+                } else if (div.style.backgroundColor === "blue") {
+                    div.style.backgroundColor = "purple";
+                    div.style.color = "white";
+                    document.getElementById("color-name").innerHTML =
+                        "фиолетовый";
+                } else {
+                    div.style.backgroundColor = "yellow";
+                    div.style.color = "black";
+                    document.getElementById("color-name").innerHTML = "желтый";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+            <hr />
+        </header>
+
+        <main>
+            <div class="color_block" ondblclick="changeColor(this)">
+                <h2>Цвет: <span id="color-name">желтый</span></h2>
+                <br />
+                Сделайте двойной щелчок, чтобы сменить.
+            </div>
+        </main>
+
+        <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
+    </body>
+</html>
