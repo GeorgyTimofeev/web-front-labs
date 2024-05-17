@@ -8,7 +8,22 @@
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
         <link rel="icon" href="../favicon-16x16.png" />
         <link rel="icon" href="../favicon-32x32.png" />
+
+        <script>
+            function addNewBlock() {
+                let newBlock = document.createElement("div");
+                newBlock.style.backgroundColor = "#AB8DF6";
+                newBlock.style.height = "40px";
+                newBlock.style.width = "200px";
+                newBlock.style.borderRadius = "10px";
+                newBlock.style.margin = "10px";
+                newBlock.style.border = "2px solid #9A7BE5";
+
+                document.querySelector("main").appendChild(newBlock);
+            }
+        </script>
     </head>
+
     <body>
         <header>
             НГТУ, ФБ, Лабораторная работа 7
@@ -16,10 +31,7 @@
         </header>
 
         <main>
-            <h1>Лабораторная работа 7</h1>
-            <ul>
-                <li><a href="bloks.html">Добавление блоков</a></li>
-            </ul>
+            <button onclick="addNewBlock()">Добавить блок</button>
         </main>
 
         <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>

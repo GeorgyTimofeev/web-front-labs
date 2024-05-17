@@ -111,4 +111,14 @@ div.menu:hover {
     background-color: #E6E8FA;
 }
 
-
+button {
+    color: #7b68ee;
+    font-size: 2em;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: whitesmoke;
+    cursor: pointer;
+    display: inline-block;
+}
