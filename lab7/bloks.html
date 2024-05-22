@@ -16,16 +16,22 @@
                 text-align: center;
                 padding: 5px;
                 margin: 5px;
+                width: 150px;
                 border-radius: 40px;
                 border: none;
                 background-color: whitesmoke;
                 cursor: pointer;
+            }
+
+            button {
+                font-size: 1.3em;
             }
         </style>
 
         <script>
             function addNewBlock() {
                 let newBlock = document.createElement("div");
+                newBlock.classList.add("dynamic-block");
                 newBlock.style.backgroundColor = "#AB8DF6";
                 newBlock.style.height = "40px";
                 newBlock.style.width = "200px";
@@ -44,6 +50,7 @@
                     for (let i = 1; i <= times; i++) {
                         widthh += 20;
                         let newBlock = document.createElement("div");
+                        newBlock.classList.add("dynamic-block");
                         newBlock.style.backgroundColor = "#AB8DF6";
                         newBlock.style.height = "40px";
                         newBlock.style.borderRadius = "10px";
@@ -67,6 +74,7 @@
                 let main = document.querySelector('main');
                 for(let i = 20; i <=50; i+=2.5) {
                     let newBlock = document.createElement('div');
+                    newBlock.classList.add("dynamic-block");
                     newBlock.style.width = '90px';
                     newBlock.style.height = '40px';
                     newBlock.style.display = 'flex';
@@ -90,6 +98,7 @@
                 let main = document.querySelector('main');
                 for(let i = 10; i >= -80; i-=3) {
                     let newBlock = document.createElement('div');
+                    newBlock.classList.add("dynamic-block");
                     newBlock.style.width = '40px';
                     newBlock.style.height = '40px';
                     newBlock.style.borderRadius = '50%';
@@ -113,6 +122,7 @@
                 let main = document.querySelector('main');
                 for (let i = 10; i <= 100; i += 10) {
                     let newBlock = document.createElement('div');
+                    newBlock.classList.add("dynamic-block");
                     newBlock.style.width = '40px';
                     newBlock.style.height = '40px';
                     newBlock.style.borderRadius = '50%';
@@ -134,6 +144,42 @@
                 }
             }
 
+            function bluePink() {
+                let main = document.querySelector('main');
+                let times = parseInt(document.getElementById('bluePink').value);
+                for (let i = times; i > 0; i--) {
+                    let newBlock = document.createElement('div');
+                    newBlock.classList.add("dynamic-block");
+                    newBlock.style.width = '40px';
+                    newBlock.style.height = '40px';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.color = 'white';
+                    newBlock.style.fontSize = '20px';
+                    newBlock.style.fontWeight = 'bold';
+                    newBlock.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+                    newBlock.style.display = 'inline-block';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.lineHeight = '40px';
+                    newBlock.style.margin = '10px';
+
+
+                    if (i % 2 == 0) {
+                        newBlock.style.backgroundColor = 'lightblue';
+                    } else {
+                        newBlock.style.backgroundColor = 'lightpink';
+                    }
+
+                    newBlock.innerHTML = `${i}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
+
+            function clearBlocks() {
+                let main = document.querySelector('main');
+                let blocks = main.querySelectorAll('.dynamic-block');
+                blocks.forEach(block => block.remove());
+            }
 
         </script>
     </head>
@@ -145,7 +191,11 @@
         </header>
 
         <main>
-            <button onclick="addNewBlock()">Добавить блок</button> </br>
+            <button onclick="addNewBlock()">Добавить блок</button>
+            <button onclick="clearBlocks()">Очистить блоки</button>
+            <button onclick="add20_50()">20 => 50</button>
+            <button onclick="add10_80()">10 => -80</button>
+            <button onclick="opacityBlocks()">Полупрозрачные блоки</button></br>
             <button onclick="addNewBlocks()" style="display: inline-block">
                 Добавить блоки
             </button>
@@ -154,9 +204,8 @@
                 id="blocks"
                 placeholder="кол-во блоков"
             /> </br>
-            <button onclick="add20_50()">20 => 50</button><br>
-            <button onclick="add10_80()">10 => -80</button><br>
-            <button onclick="opacityBlocks()">Полупрозрачные блоки</button><br>
+            <button onclick="bluePink()" style="display: inline-block">Добавить голубые и розовые блоки</button>
+            <input type="text" id="bluePink" placeholder="кол-во блоков"></br>
         </main>
 
         <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
