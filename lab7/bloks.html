@@ -52,6 +52,8 @@
                         newBlock.style.border = "2px solid #9A7BE5";
                         newBlock.style.fontFamily = "Helvetica";
                         newBlock.style.color = "white";
+                        newBlock.style.textAlign = "center";
+                        newBlock.style.lineHeight = "40px";
 
                         newBlock.innerHTML = `Блок №${i + 1}: 2*${i}<sup>2</sup> = ${2 * i ** 2}`;
                         newBlock.style.width = 250 + widthh + "px";
@@ -84,6 +86,29 @@
                 }
             }
 
+            function add10_80() {
+                let main = document.querySelector('main');
+                for(let i = 10; i >= -80; i-=3) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '40px';
+                    newBlock.style.height = '40px';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.backgroundColor = 'lightblue';
+                    newBlock.style.color = 'white';
+                    newBlock.style.fontSize = '20px';
+                    newBlock.style.fontWeight = 'bold';
+                    newBlock.style.margin = '10px';
+                    newBlock.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+                    newBlock.style.display = 'inline-block';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.lineHeight = '40px';
+
+                    newBlock.innerHTML = `${i}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
+
         </script>
     </head>
 
@@ -104,6 +129,7 @@
                 placeholder="кол-во блоков"
             /> </br>
             <button onclick="add20_50()">20 => 50</button><br>
+            <button onclick="add10_80()">10 => -80</button><br>
         </main>
 
         <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
