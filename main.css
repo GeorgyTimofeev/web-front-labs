@@ -121,4 +121,5 @@ button {
     background-color: whitesmoke;
     cursor: pointer;
     display: inline-block;
+    margin: 10px;
 }
