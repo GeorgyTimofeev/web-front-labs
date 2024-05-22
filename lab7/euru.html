@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Тимофеев Георгий Алексеевич. Лабораторная 7</title>
+        <link rel="stylesheet" href="../main.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../favicon-16x16.png" />
+        <link rel="icon" href="../favicon-32x32.png" />
+        <style>
+            .currency-info {
+                padding: 10px;
+                margin: 10px;
+                border: 7px solid #ab8df6;
+                border-radius: 20px;
+                width: 445px;
+                font-family: Helvetica;
+                text-align: center;
+                color: #9a7be5;
+                background-color: #e6e6fa;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            window.onload = function () {
+                getEuroExchangeRate();
+            };
+
+            function getEuroExchangeRate() {
+                const url = "https://www.cbr-xml-daily.ru/daily_json.js";
+                fetch(url)
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (json) {
+                        const currencyInfo =
+                            document.getElementById("currency-info");
+                        currencyInfo.innerHTML = `
+                            <p>Текущий курс евро: ${json.Valute.EUR.Value.toFixed(2)} руб.</p>
+                            <p>Дата запроса: ${json.Date.slice(0, 10)}</p>
+                            <p>Курс за прошлую дату: ${json.Valute.EUR.Previous.toFixed(2)} руб.</p>
+                            <p>Разница: ${(json.Valute.EUR.Value - json.Valute.EUR.Previous).toFixed(2)}</p>
+                            <p>${json.Valute.EUR.Value - json.Valute.EUR.Previous > 0 ? "Курс поднялся" : "Курс опустился"}</p>
+                        `;
+                    });
+            }
+        </script>
+    </head>
+    <body>
+        <header>НГТУ, ФБ, Лабораторная работа 7</header>
+
+        <main>
+            <div
+                class="menu"
+                style="
+                    padding: 10px;
+                    margin: 10px;
+                    border: 7px solid #9a7be5;
+                    border-radius: 20px;
+                    width: 500px;
+                    font-family: Helvetica;
+                    text-align: center;
+                    color: white;
+                    background-color: #ab8df6;
+                    font-weight: bold;
+                "
+            >
+                <h2>Значения курса</h2>
+                <div id="currency-info" class="currency-info"></div>
+            </div>
+
+            <div
+                class="menu"
+                style="
+                    padding: 10px;
+                    margin: 10px;
+                    border: 7px solid #9a7be5;
+                    border-radius: 20px;
+                    width: 500px;
+                    font-family: Helvetica;
+                    text-align: center;
+                    color: white;
+                    background-color: #ab8df6;
+                    font-weight: bold;
+                "
+            >
+                <h2>Источник</h2>
+                <a href="https://www.cbr-xml-daily.ru/"
+                    >Курсы ЦБ РФ в XML и JSON, API</a
+                >
+            </div>
+        </main>
+
+        <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
+    </body>
+</html>
