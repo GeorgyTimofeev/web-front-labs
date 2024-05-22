@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Тимофеев Георгий Алексеевич. Лабораторная 7</title>
+        <link rel="stylesheet" href="../main.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../favicon-16x16.png" />
+        <link rel="icon" href="../favicon-32x32.png" />
+
+        <style>
+            table {
+                background-color: #e6e6fa;
+                border-radius: 10px;
+                margin: 10px;
+                border: 2px solid #9a7be5;
+                width: 200px;
+                overflow: auto;
+            }
+
+            td {
+                height: 40px;
+                border: 1px solid #9a7be5;
+                border-radius: 5px;
+                text-align: center;
+                color: white;
+                background-color: #ab8df6;
+            }
+        </style>
+
+        <script>
+            function showExchange() {
+                const exchange = [
+                    91.3124, 91.1231, 91.8239, 91.633, 91.3591, 91.2573,
+                    90.9239, 90.9873, 90.6537, 90.4082,
+                ];
+
+                const table = document.getElementById("dollar-table");
+                const detail = document.getElementById("detail");
+                const button = document.getElementById("button");
+
+                let sum = 0;
+
+                table.innerHTML = "";
+
+                for (let i = 0; i < exchange.length; i++) {
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `<td>${exchange[i].toFixed(2)}</td>`;
+                    table.appendChild(tr);
+
+                    sum += exchange[i];
+                }
+
+                const average = (sum / exchange.length).toFixed(2);
+
+                detail.textContent = `Средний курс: ${average}`;
+
+                button.style.display = "none";
+
+                table.style.display = "table";
+                detail.style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr />
+        </header>
+
+        <main>
+            <button id="button" onclick="showExchange()">Курс доллара</button>
+            <table border="1" id="dollar-table" style="display: none"></table>
+            <div
+                id="detail"
+                style="
+                    color: white;
+                    background-color: #ab8df6;
+                    width: 190px;
+                    border-radius: 10px;
+                    padding: 5px;
+                    margin: 10px;
+                    display: none;
+                    text-align: center;
+                "
+            ></div>
+        </main>
+
+        <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
+    </body>
+</html>
