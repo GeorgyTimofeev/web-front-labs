@@ -15,8 +15,11 @@
                 border-radius: 10px;
                 margin: 10px;
                 border: 2px solid #9a7be5;
-                width: 200px;
+                width: 500px;
                 overflow: auto;
+                display: flex;
+                justify-content: space-between;
+                padding: 0px;
             }
 
             td {
@@ -61,6 +64,70 @@
                 table.style.display = "table";
                 detail.style.display = "block";
             }
+
+            function gemc() {
+                const exchange = [
+                    803.0, 800.3, 815.0, 809.1, 840.0, 850.8, 928.1, 922.8,
+                    919.6, 912.1,
+                ];
+                const date = [
+                    "21.05.2024",
+                    "20.05.2024",
+                    "17.05.2024",
+                    "16.05.2024",
+                    "15.05.2024",
+                    "14.05.2024",
+                    "13.05.2024",
+                    "10.05.2024",
+                    "08.05.2024",
+                    "07.05.2024",
+                ];
+                let table = document.getElementById("gemcTable");
+
+                for (let i = 0; i < exchange.length; i++) {
+                    let tr = document.createElement("tr");
+                    let tdDate = document.createElement("td");
+                    let tdExchange = document.createElement("td");
+                    let tdDifference = document.createElement("td");
+
+                    tdDate.innerText = date[i];
+                    tdExchange.innerText = exchange[i];
+                    if (i > 0) {
+                        tdDifference.innerText = (
+                            exchange[i] - exchange[i - 1]
+                        ).toFixed(2);
+                    } else {
+                        tdDifference.innerText = "-";
+                    }
+
+                    tr.appendChild(tdDate);
+                    tr.appendChild(tdExchange);
+                    tr.appendChild(tdDifference);
+                    table.appendChild(tr);
+                }
+
+                document.getElementById("buttonPos").style.display = "none";
+
+                let sum = 0;
+                let min = exchange[0];
+                let max = exchange[0];
+                for (let i = 0; i < exchange.length; i++) {
+                    sum += exchange[i];
+                    if (exchange[i] < min) min = exchange[i];
+                    if (exchange[i] > max) max = exchange[i];
+                }
+                let average = sum / exchange.length;
+                average = average.toFixed(2);
+                document.getElementById("posDet").innerText =
+                    "Средний курс: " +
+                    average +
+                    ", максимальное значение: " +
+                    max +
+                    ", минимальное значение: " +
+                    min;
+                document.getElementById("gemcTable").style.display = "table";
+                document.getElementById("posDet").style.display = "block";
+            }
         </script>
     </head>
     <body>
@@ -70,21 +137,47 @@
         </header>
 
         <main>
-            <button id="button" onclick="showExchange()">Курс доллара</button>
-            <table border="1" id="dollar-table" style="display: none"></table>
-            <div
-                id="detail"
-                style="
-                    color: white;
-                    background-color: #ab8df6;
-                    width: 190px;
-                    border-radius: 10px;
-                    padding: 5px;
-                    margin: 10px;
-                    display: none;
-                    text-align: center;
-                "
-            ></div>
+            <div style="float: left; width: 45%; margin-right: 10px">
+                <button id="button" onclick="showExchange()">
+                    Курс доллара
+                </button>
+                <table id="dollar-table" style="display: none"></table>
+                <div
+                    id="detail"
+                    style="
+                        display: none;
+                        color: white;
+                        background-color: #ab8df6;
+                        width: 500px;
+                        border-radius: 10px;
+                        padding: 5px;
+                        margin: 10px;
+                        text-align: center;
+                    "
+                ></div>
+            </div>
+
+            <div style="float: right; width: 45%">
+                <button id="buttonPos" onclick="gemc()">
+                    Курс акций ЕвроМедЦентр
+                </button>
+                <table id="gemcTable" style="display: none"></table>
+                <div
+                    id="posDet"
+                    style="
+                        display: none;
+                        color: white;
+                        background-color: #ab8df6;
+                        width: 500px;
+                        border-radius: 10px;
+                        padding: 5px;
+                        margin: 10px;
+                        text-align: center;
+                    "
+                ></div>
+            </div>
+
+            <div style="clear: both"></div>
         </main>
 
         <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
