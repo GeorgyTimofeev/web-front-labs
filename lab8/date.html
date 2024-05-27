@@ -8,14 +8,39 @@
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
         <link rel="icon" href="../favicon-16x16.png" />
         <link rel="icon" href="../favicon-32x32.png" />
+        <script src="lab8.js"></script>
+        <style>
+            .block-info {
+                background-color: whitesmoke;
+                border-radius: 8px;
+                margin-left: 0px;
+                width: 300px;
+                padding: 10px;
+                display: inline-block;
+            }
+        </style>
     </head>
-    <body>
+    <body onload="showDate()">
         <header>
             НГТУ, ФБ, Лабораторная работа 8
             <hr />
         </header>
 
-        <main></main>
+        <main>
+            <div class="block-info">
+                <h2>Дата</h2>
+                <div id="current-date"></div>
+                <br />
+                <div id="current-date1"></div>
+                <br />
+                <div id="current-date2"></div>
+                <br />
+                <div id="current-date3"></div>
+                <br />
+                <div id="current-date4"></div>
+                <br />
+            </div>
+        </main>
 
         <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
     </body>
