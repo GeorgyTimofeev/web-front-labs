@@ -42,3 +42,21 @@ function showDate() {
   document.getElementById("dayWeek").innerHTML =
     "Сегодняшний день недели: " + dayArr[day];
 }
+
+let dayArr = [
+  "Воскресенье",
+  "Понедельник",
+  "Вторник",
+  "Среда",
+  "Четверг",
+  "Пятница",
+  "Суббота",
+];
+
+function showDay() {
+  let bigDateInput = document.getElementById("bigDay");
+  let bigDateString = bigDateInput.value;
+  let bigDate = new Date(bigDateString);
+  let day = bigDate.getDay();
+  document.getElementById("bigDay1").innerHTML = "День недели: " + dayArr[day];
+}
