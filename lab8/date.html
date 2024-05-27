@@ -16,9 +16,14 @@
                 margin-left: 0px;
                 width: 300px;
                 height: auto;
-                padding: 10px;
+                padding: 20px;
                 display: block;
                 margin-bottom: 20px;
+            }
+
+            .container {
+                display: flex;
+                justify-content: space-between;
             }
         </style>
     </head>
@@ -29,30 +34,57 @@
         </header>
 
         <main>
-            <div class="block-info">
-                <h2>Локали</h2>
-                <div id="current-date"></div>
-                <br />
-                <div id="current-date1"></div>
-                <br />
-                <div id="current-date2"></div>
-                <br />
-                <div id="current-date3"></div>
-                <br />
-                <div id="current-date4"></div>
-                <br />
+            <div class="container">
+                <div class="block-info" style="width: 45%">
+                    <h2>Локали</h2>
+                    <div id="current-date"></div>
+                    <br />
+                    <div id="current-date1"></div>
+                    <br />
+                    <div id="current-date2"></div>
+                    <br />
+                    <div id="current-date3"></div>
+                    <br />
+                    <div id="current-date4"></div>
+                    <br />
+                </div>
+
+                <div class="block-info" style="width: 45%">
+                    <h2>Сегодня</h2>
+                    <div id="year"></div>
+                    <br />
+                    <div id="mounth"></div>
+                    <br />
+                    <div id="day"></div>
+                    <br />
+                    <div id="dayWeek"></div>
+                    <br />
+                </div>
             </div>
 
-            <div class="block-info" style="height: auto">
-                <h2>Сегодня</h2>
-                <div id="year"></div>
-                <br />
-                <div id="mounth"></div>
-                <br />
-                <div id="day"></div>
-                <br />
-                <div id="dayWeek"></div>
-                <br />
+            <div class="container">
+                <div
+                    class="block-info"
+                    style="display: inline-block; width: 45%"
+                >
+                    <h2>День недели</h2>
+                    <input type="date" name="" id="bigDay" style="width: 45%" />
+                    <button
+                        onclick="showDay()"
+                        style="
+                            width: 50%;
+                            font-size: 20px;
+                            margin-left: 5px;
+                            border: none;
+                            padding-left: 0px;
+                        "
+                    >
+                        Узнать день недели
+                    </button>
+                    <div style="margin-left: 0px" id="bigDay1">
+                        День недели:
+                    </div>
+                </div>
             </div>
         </main>
 
