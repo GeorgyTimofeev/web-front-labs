@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Тимофеев Георгий Алексеевич. Лабораторная 8</title>
+        <link rel="stylesheet" href="../main.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../favicon-16x16.png" />
+        <link rel="icon" href="../favicon-32x32.png" />
+        <script src="get-days-count.js"></script>
+        <style>
+            .block-info {
+                background-color: whitesmoke;
+                border-radius: 8px;
+                margin-left: 0px;
+                width: 420px;
+                height: 100px;
+                padding: 20px;
+                display: block;
+                margin-bottom: 20px;
+                left: 45%;
+            }
+
+            .container {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            button {
+                font-size: 16px;
+                margin-left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 8
+            <hr />
+        </header>
+
+        <main>
+            <div class="block-info">
+                <div>
+                    <label style="margin-left: 10px">
+                        Дата рождения: <input type="date"
+                    /></label>
+                </div>
+
+                <div>
+                    <button onclick="showDaysCount()">
+                        Показать число дней
+                    </button>
+                    <button onclick="emptyDaysCount()">Очистить поле</button>
+                </div>
+
+                <div
+                    id="daysCount"
+                    style="margin-left: 10px; color: #7b68ee; font-size: 20px"
+                ></div>
+            </div>
+        </main>
+
+        <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
+    </body>
+</html>
