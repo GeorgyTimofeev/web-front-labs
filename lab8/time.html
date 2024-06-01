@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Тимофеев Георгий Алексеевич. Лабораторная 8</title>
+        <link rel="stylesheet" href="../main.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../favicon-16x16.png" />
+        <link rel="icon" href="../favicon-32x32.png" />
+        <script src="time.js"></script>
+        <style>
+            .block-info {
+                background-color: whitesmoke;
+                border-radius: 8px;
+                margin-left: 0px;
+                width: 420px;
+                height: 100px;
+                padding: 20px;
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .container {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            button {
+                font-size: 16px;
+                margin-left: 0px;
+            }
+
+            #time {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+                background-color: whitesmoke;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 20px;
+                margin-top: 30px;
+                color: #7b68ee;
+            }
+
+            #seconds {
+                font-size: 100px;
+                color: black;
+                display: flex;
+                justify-content: right;
+            }
+        </style>
+    </head>
+    <body onload="showTime()">
+        <header>
+            НГТУ, ФБ, Лабораторная работа 8
+            <div id="time">00:00:00</div>
+        </header>
+
+        <main>
+            <div id="seconds"></div>
+        </main>
+
+        <footer>&copy; Тимофеев Георгий, ФБИ-22, 2 курс, 2024</footer>
+    </body>
+</html>
